@@ -9,12 +9,12 @@ const routes: Routes = [
     component: TabsPage,
     children:[
       {
-        path: 'alumnos',
+        path:'alumnos',
         loadChildren: () => import('../alumnos/alumnos.module').then(m=>m.AlumnosPageModule)
       },
       {
-        path: 'recetas',
-        loadChildren: () => import('../recetas/recetas.module').then(m=>m.RecetasPageModule)
+        path:'galeria',
+        loadChildren: () => import('../galeria/galeria.module').then(m=>m.GaleriaPageModule)
       },
       {
         path:'',

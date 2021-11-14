@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute,Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Receta } from '../recetas/receta.model';
 import { RecetasService } from '../recetas/recetas.service';
 
@@ -9,17 +9,16 @@ import { RecetasService } from '../recetas/recetas.service';
   styleUrls: ['./detalle-receta.page.scss'],
 })
 export class DetalleRecetaPage implements OnInit {
-
   receta: Receta;
   idReceta: number;
-  constructor(
-    private recetaService: RecetasService,
-    private activatedRoute: ActivatedRoute,
-    private router: Router
-    ) { }
-
+  constructor
+  (private recetaService: RecetasService, 
+  private activatedRouted: ActivatedRoute,
+  private router: Router
+  ) { }
+  
   ngOnInit() {
-    this.activatedRoute.paramMap.subscribe(paramMap=>{
+    this.activatedRouted.paramMap.subscribe(paramMap=>{
       this.idReceta = Number.parseInt(paramMap.get('idReceta'));
       this.receta = this.recetaService.getReceta(this.idReceta);
     });
